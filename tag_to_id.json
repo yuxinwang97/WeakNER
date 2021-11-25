@@ -1,0 +1,1 @@
+{"O": 0, "B-country": 1, "I-country": 2, "B-covid": 3, "I-covid": 4, "B-livestock": 5, "I-livestock": 6, "B-wildlife": 7, "I-wildlife": 8, "B-Evolution": 10, "I-Evolution": 9, "B-PhysicalScience": 11, "I-PhysicalScience": 12, "B-Substrate": 13, "I-Substrate": 14, "B-Material": 15, "I-Material": 16 , "B-ImmuneResponse": 17, "I-ImmuneResponse": 18}
