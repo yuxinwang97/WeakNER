@@ -116,6 +116,8 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, best, mode, pre
 
     p_ls = np.array(list(correct_preds.values())) / np.array(list(total_preds.values()))
     r_ls = np.array(list(correct_preds.values())) / np.array(list(total_correct.values()))
+    p_ls = numpy.nan_to_num(p_ls)
+    r_ls = numpy.nan_to_num(r_ls)
     logger.info("precision list: ", p_ls)
     logger.info("recall list: ", r_ls)
     new_F_ls = []
@@ -128,15 +130,6 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, best, mode, pre
     # p   = correct_preds / total_preds if correct_preds > 0 else 0
     # r   = correct_preds / total_correct if correct_preds > 0 else 0
     # new_F  = 2 * p * r / (p + r) if correct_preds > 0 else 0
-
-    # p,r,new_F = 0
-    # pred_list = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0}
-    # truth_list = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0}
-    # for ground_truth_id,predicted_id in zip(out_id_list, preds_id_list):
-    #     for i in predicted_id:
-    #         pred_list[i] += 1
-    #     for j in ground_truth_id:
-    #         truth_list[j] += 1
     
 
     is_updated = False
