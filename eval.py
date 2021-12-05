@@ -116,6 +116,8 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, best, mode, pre
 
     p_ls = np.array(list(correct_preds.values())) / np.array(list(total_preds.values()))
     r_ls = np.array(list(correct_preds.values())) / np.array(list(total_correct.values()))
+    logger.info("precision list: ", p_ls)
+    logger.info("recall list: ", r_ls)
     new_F_ls = []
     p = sum(p_ls)/len(p_ls)
     r = sum(r_ls)/len(r_ls)
