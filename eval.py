@@ -127,7 +127,8 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, best, mode, pre
     for pt, rt in zip(p_ls,r_ls):
         new_F_ls.append(2 * pt * rt / (pt + rt))
     new_F_ls = np.nan_to_num(new_F_ls)
-    new_F  = sum(new_F_ls)/len(new_F_ls)
+    new_F_ls = new_F_ls[1:]
+    new_F  = sum(new_F_ls )/ len(new_F_ls)
 
     # p   = correct_preds / total_preds if correct_preds > 0 else 0
     # r   = correct_preds / total_correct if correct_preds > 0 else 0
