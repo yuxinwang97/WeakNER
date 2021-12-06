@@ -57,7 +57,6 @@ CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=$GPUID python3 run_self_traini
   --per_gpu_eval_batch_size $EVAL_BATCH \
   --logging_steps 100 \
   --save_steps 100000 \
-  --do_train \
   --do_eval \
   --do_predict \
   --evaluate_during_training \
